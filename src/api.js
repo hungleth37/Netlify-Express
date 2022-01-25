@@ -9,7 +9,11 @@ router.get("/", (req, res) => {
     hello: "hi!"
   });
 });
-
+router.get("/page1", (req, res) => {
+  res.json({
+    hello: "Page1!"
+  });
+});
 app.use(`/.netlify/functions/api`, router);
 
 module.exports = app;
