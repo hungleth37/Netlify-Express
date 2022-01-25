@@ -5,14 +5,14 @@ const app = express();
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.json({
-    hello: "hi!"
-  });
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello from Express.js!</h1>');
+  res.end();
 });
 router.get("/page1", (req, res) => {
-  res.json({
-    hello: "Page1!"
-  });
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello from Express.js Page1!</h1>');
+  res.end();
 });
 app.use(`/.netlify/functions/api`, router);
 
